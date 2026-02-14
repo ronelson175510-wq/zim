@@ -1,0 +1,319 @@
+.header {
+  background-color: black;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: block;
+  justify-content: space-between;
+  cursor: pointer;
+
+}
+
+.footer {
+    padding: 16px;
+    position: fixed;
+    text-align: center;
+    background-color: rgb(54, 53, 53);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    display: block;
+    justify-content: space-between;
+    display: flex;
+    padding-left: 1px;
+    
+    cursor: pointer;
+    
+}
+
+
+
+
+.footer a {
+  text-align: center;
+  padding: px;
+  color: rgb(212, 217, 225);
+  text-decoration: none;
+  font-size: 15px;
+  margin-right: 25px;
+ margin-left: 25px;
+
+ 
+  
+  
+}
+
+.footer a:hover {
+  background-color: ;
+  
+}
+.footer a.active {
+  background-color:white
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: black ;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: gray;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+  .zimarketheader1 {
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+
+.mylistingsbtn {
+  flex: 1;
+  min-width: 150px;
+  background-color: #B197FC;
+  border: 1px solid rgb(10, 10, 10);
+  border-radius: 22px;
+  padding: 15px 20px;
+  font-size: clamp(14px, 2vw, 20px);
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.mylistingsbtn:hover {
+   background: linear-gradient(-75deg, #e43905, #e73c7e, #241f22, #059a34);
+  animation: gradient 5s ease infinite;
+  background-size: 400% 400%;
+}
+
+.mylistingsbtn:active {
+  background-color: #141414;
+}
+
+.zimarketbtn {
+  flex: 1;
+  min-width: 150px;
+  background-color: #B197FC;
+  border: 1px solid rgb(10, 10, 10);
+  border-radius: 22px;
+  padding: 15px 20px;
+  font-size: clamp(14px, 2vw, 20px);
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.zimarketbtn:hover {
+   background: linear-gradient(-75deg, #e43905, #e73c7e, #241f22, #059a34);
+  animation: gradient 5s ease infinite;
+  background-size: 400% 400%;
+}
+
+.zimarketbtn:active {
+  background-color: #141414;
+  background: linear-gradient(-75deg, #e43905, #e73c7e, #241f22, #059a34);
+  animation: gradient 5s ease infinite;
+  background-size: 400% 400%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.usericon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-upload-btn {
+  position: relative;
+  background: none;
+  border: 2px solid #B197FC;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(177, 151, 252, 0.3);
+}
+
+.profile-upload-btn:hover {
+  box-shadow: 0 6px 16px rgba(177, 151, 252, 0.6);
+  border-color: #9b6ed9;
+  transform: scale(1.05);
+}
+
+.profile-upload-btn:active {
+  transform: scale(0.98);
+}
+
+
+
+.fa-plus {
+  margin-left: -30px;
+  margin-top: 72px;
+  position: relative;
+}
+
+.subscribebtn {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #B197FC;
+  border: 1px solid rgb(10, 10, 10);
+  border-radius: 22px;
+  padding: 3px 22px;
+  font-size: 20px;
+  width: 20vh;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.subscribe-bell-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.fa-bell {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fa-bell:hover {
+  transform: scale(1.2);
+}
+
+.icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.fa-basket-shopping {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fa-basket-shopping:hover {
+  transform: scale(1.2);
+}
+
+.fa-book {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fa-book:hover {
+  transform: scale(1.2);
+}
+
+.fa-bell {
+  float: right;
+  display: flex;
+margin-left: auto ;
+margin-right: auto ;
+width: 50%;
+justify-content: center;
+align-items: center;
+}
+
+
+

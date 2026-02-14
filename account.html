@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: white;">
+<div class="profile-section">
+  <div class="usericon">
+    <button class="profile-upload-btn" id="profileBtn" title="Click to upload profile picture">
+      <img id="profileImg" src="./Zim Assets/profile silhouette 2.jpg" alt="Profile Picture" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover;">
+      <i class="fa-solid fa-camera fa-lg" style="color: rgba(177, 151, 252, 1); position: absolute; bottom: 10px; right: 10px; background: white; padding: 8px; border-radius: 50%;"></i>
+    </button>
+    <input type="file" id="profileFileInput" accept="image/*" style="display: none;">
+  </div>   
+  
+  <div class="subscribe-bell-container">
+    <button class="subscribebtn">Subcribe</button>
+    <i class="fa-solid fa-bell fa-2xl" style="color: rgba(177, 151, 252, 1);"></i>
+  </div>
+</div>
+
+<div class="icons-container">
+  <i class="fa-solid fa-book fa-2xl" style="color: rgba(177, 151, 252, 1);"></i>
+  <i class="fa-solid fa-basket-shopping fa-2xl" style="color: #B197FC;"></i>
+</div>
+
+<script>
+  // Profile picture upload functionality
+  const profileBtn = document.getElementById('profileBtn');
+  const profileFileInput = document.getElementById('profileFileInput');
+  const profileImg = document.getElementById('profileImg');
+
+  // Open file input when profile button is clicked
+  profileBtn.addEventListener('click', () => {
+    profileFileInput.click();
+  });
+
+  // Handle file selection
+  profileFileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      // Validate file is an image
+      if (file.type.startsWith('image/')) {
+        // Create a FileReader to read the file
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          // Update the profile image
+          profileImg.src = e.target.result;
+          // Store in localStorage so it persists on page reload
+          localStorage.setItem('profilePicture', e.target.result);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        alert('Please select a valid image file');
+      }
+    }
+  });
+
+  // Load saved profile picture on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedImage = localStorage.getItem('profilePicture');
+    if (savedImage) {
+      profileImg.src = savedImage;
+    }
+  });
+</script>
+</body>
+</html>
